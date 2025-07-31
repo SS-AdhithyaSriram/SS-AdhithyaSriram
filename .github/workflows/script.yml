@@ -33,14 +33,14 @@ jobs:
        if: steps.check.outputs.already_ran == 'false'
        id: random
        run: |
-         # Random commits: 2(25%), 3(50%), 4(25%)
+         # Random commits: 1(25%), 2(50%), 3(25%)
          RAND=$((RANDOM % 100))
          if [ $RAND -lt 25 ]; then
-           COMMIT_COUNT=2
+           COMMIT_COUNT=1
          elif [ $RAND -lt 75 ]; then
-           COMMIT_COUNT=3
+           COMMIT_COUNT=2
          else
-           COMMIT_COUNT=4
+           COMMIT_COUNT=3
          fi
          echo "commits=$COMMIT_COUNT" >> $GITHUB_OUTPUT
          
